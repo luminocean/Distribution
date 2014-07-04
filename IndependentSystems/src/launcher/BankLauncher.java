@@ -3,6 +3,7 @@ package launcher;
 import javax.xml.ws.Endpoint;
 
 import bank.BankImpl;
+import util.ConfigManager;
 import util.Logger;
 import util.SideType;
 
@@ -14,7 +15,13 @@ public class BankLauncher {
 	}
 
 	public void launch() {
-		Endpoint.publish("http://localhost:8080/ws/bank", new BankImpl());
+		String url = ConfigManager.getValue("bankwsdl");
+		
+		if( url == null ){
+			Logger.log(SideType.银行服务器, "找不到银行服务器的配置！", this);
+		}
+		
+		Endpoint.publish(url, new BankImpl());
 		
 		Logger.log(SideType.银行服务器, "银行端Web Service启动", this);
 	}

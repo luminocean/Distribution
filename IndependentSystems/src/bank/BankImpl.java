@@ -3,11 +3,14 @@ package bank;
 import java.util.List;
 
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
 
 import util.Logger;
 import util.SideType;
 
 @WebService(endpointInterface = "bank.BankPort")
+@SOAPBinding(style=SOAPBinding.Style.DOCUMENT)
 public class BankImpl implements BankPort{
 
 	@Override

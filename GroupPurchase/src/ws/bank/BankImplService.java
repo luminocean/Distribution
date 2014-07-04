@@ -30,7 +30,7 @@ public class BankImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/ws/bank?wsdl");
+            url = new URL("http://localhost:13001/ws/bank?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

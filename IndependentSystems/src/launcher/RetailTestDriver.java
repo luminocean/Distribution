@@ -1,7 +1,8 @@
 package launcher;
 
-import retail.ws.GPMSImplService;
-import retail.ws.GPMSPort;
+import retail.GPMSImplService;
+import retail.GPMSPort;
+
 
 public class RetailTestDriver {
 
