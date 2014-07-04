@@ -1,7 +1,8 @@
-package bank;
+package launcher;
 
 import javax.xml.ws.Endpoint;
 
+import bank.BankImpl;
 import util.Logger;
 import util.SideType;
 
@@ -12,7 +13,7 @@ public class BankLauncher {
 		
 	}
 
-	private void launch() {
+	public void launch() {
 		Endpoint.publish("http://localhost:8080/ws/bank", new BankImpl());
 		
 		Logger.log(SideType.银行服务器, "银行端Web Service启动", this);

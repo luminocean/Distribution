@@ -39,13 +39,16 @@ public class ServerLauncher {
 		
 		//创建管理系统，放点东西进去
 		gpm = GroupPurchaseManagementSystemFactory.createGroupPurchaseManagementSystem(messageSystem, bank);
-		gpm.publishGroupPurchaseItem("_seller_a_s3cret_k3y", "靴子", "捡来的", 200, 120);
+		//gpm.publishGroupPurchaseItem("_seller_a_s3cret_k3y", "靴子", "捡来的", 200, 120);
 		
 		//设置RMI
 		setUpRMI(gpm);
 		
+		GPMSImpl gpmsWS = new GPMSImpl();
+		gpmsWS.setGPMS(gpm);
+		
 		//发布WSDL
-		Endpoint.publish("http://localhost:8081/ws/gpms", new GPMSImpl());
+		Endpoint.publish("http://localhost:8081/ws/gpms", gpmsWS);
 		
 		Logger.log(SideType.团购服务器, "团购服务器已启动", this);
 	}
