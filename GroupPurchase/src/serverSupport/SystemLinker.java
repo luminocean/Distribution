@@ -1,5 +1,7 @@
 package serverSupport;
 
+import bankService.BankImplService;
+import bankService.BankPort;
 import assignment3.BankSystem;
 import assignment3.ShortMessageSender;
 import assignment3.ShortMessageSenderFactory;
@@ -26,7 +28,9 @@ public class SystemLinker {
 	 * @return
 	 */
 	public BankSystem getBankSystem(){
-		BankSystem bank = new BankImpl();
+		BankPort bankPort = new BankImplService().getBankImplPort();
+		
+		BankSystem bank = new BankProxy(bankPort);
 		return bank;
 	}
 }

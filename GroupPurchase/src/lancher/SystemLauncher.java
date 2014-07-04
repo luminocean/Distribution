@@ -29,7 +29,7 @@ public class SystemLauncher {
 		new SystemLauncher().launch();
 	}
 
-	private void launch() {
+	public void launch() {
 		//获取管理系统必要的外部系统
 		BankSystem bank = linker.getBankSystem();
 		ShortMessageSender messageSystem = linker.getMessageSystem();

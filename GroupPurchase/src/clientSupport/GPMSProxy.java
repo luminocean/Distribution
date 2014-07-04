@@ -13,10 +13,10 @@ import assignment3.GroupPurchaseManagementSystem;
  * @author luMinO
  *
  */
-public class GPMSClientImpl implements GroupPurchaseManagementSystem{
+public class GPMSProxy implements GroupPurchaseManagementSystem{
 	private RemoteGPMSService service;
 	
-	public GPMSClientImpl(RemoteGPMSService remoteService){
+	public GPMSProxy(RemoteGPMSService remoteService){
 		this.service = remoteService;
 	}
 
