@@ -4,11 +4,14 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
+import javax.xml.ws.Endpoint;
+
 import logic.server.SystemLinker;
 import rmi.RemoteGPMSImpl;
 import rmi.RemoteGPMSService;
 import util.Logger;
 import util.SideType;
+import ws.gpms.GPMSImpl;
 import assignment3.BankSystem;
 import assignment3.GroupPurchaseManagementSystem;
 import assignment3.GroupPurchaseManagementSystemFactory;
@@ -20,13 +23,13 @@ import assignment3.ShortMessageSender;
  * @author luMinO
  *
  */
-public class SystemLauncher {
+public class ServerLauncher {
 	private SystemLinker linker = new SystemLinker();
 	
 	private GroupPurchaseManagementSystem gpm;
 
 	public static void main(String[] args) {
-		new SystemLauncher().launch();
+		new ServerLauncher().launch();
 	}
 
 	public void launch() {
@@ -40,6 +43,9 @@ public class SystemLauncher {
 		
 		//设置RMI
 		setUpRMI(gpm);
+		
+		//发布WSDL
+		Endpoint.publish("http://localhost:8081/ws/gpms", new GPMSImpl());
 		
 		Logger.log(SideType.团购服务器, "团购服务器已启动", this);
 	}
