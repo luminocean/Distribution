@@ -12,6 +12,7 @@ import assignment3.ShortMessageSenderFactory;
  *
  */
 public class SystemLinker {
+	private ShortMessageSender sender = new MessageProxy();
 	
 	/**
 	 * 获取消息系统的远程代理
@@ -19,8 +20,9 @@ public class SystemLinker {
 	 */
 	public ShortMessageSender getMessageSystem(){
 		//直接new一个出来代替远程获取
-		ShortMessageSender messageSender = ShortMessageSenderFactory.createShortMessageSender();
-		return messageSender;
+		//ShortMessageSender messageSender = ShortMessageSenderFactory.createShortMessageSender();
+		
+		return sender;
 	}
 	
 	/**

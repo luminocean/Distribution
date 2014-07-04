@@ -1,4 +1,5 @@
 package jms;
+
 import java.util.Properties;
 
 import javax.jms.Connection;
@@ -12,42 +13,52 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-public class Sender {
-
-	public static void main(String[] args) {
-		new Sender().run();
-	}
-
-	private void run() {
-		try{
+public class MessageSender {
+	private ConnectionFactory connectionFactory;
+	private Destination dest;
+	
+	public MessageSender() {
+		try {
 			Context ctx = getInitialContext();
+
+			connectionFactory = (ConnectionFactory) ctx
+					.lookup("ConnectionFactory");
+			dest = (Destination) ctx.lookup("shortmessage");
 			
-			ConnectionFactory connectionFactory = (ConnectionFactory) ctx.lookup("ConnectionFactory");
-			Destination dest = (Destination) ctx.lookup("myqueue");
-			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean send(String target, String msg){
+		try {
 			Connection connection = connectionFactory.createConnection();
-			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+			Session session = connection.createSession(false,
+					Session.AUTO_ACKNOWLEDGE);
 			MessageProducer sender = session.createProducer(dest);
-			
+
 			sender.setDeliveryMode(DeliveryMode.PERSISTENT);
 			sender.setTimeToLive(1000);
-			
+
 			TextMessage message = session.createTextMessage();
 			message.setStringProperty("Contype", "txt");
-			message.setText("Helloooo~~");
-			
+			message.setText(target+":"+msg);
+
 			sender.send(message);
 			session.close();
 			connection.close();
 			
-		}catch(Exception e){
+			return true;
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+		return false;
 	}
 
-	
-	
+
+
 	private Context getInitialContext() {
 		Context ctx = null;
 
@@ -56,12 +67,12 @@ public class Sender {
 			props.put(Context.INITIAL_CONTEXT_FACTORY,
 					"org.jnp.interfaces.NamingContextFactory");
 			props.put(Context.PROVIDER_URL, "jnp://localhost:1099");
-			
+
 			ctx = new InitialContext(props);
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
-		
+
 		return ctx;
 	}
 

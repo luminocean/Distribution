@@ -1,6 +1,6 @@
 package lancher;
 
-public class StartAll {
+public class StartGP {
 
 	public static void main(String[] args) {
 		new ServerLauncher().launch();

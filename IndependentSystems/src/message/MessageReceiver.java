@@ -18,13 +18,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 
-public class Receiver {
+public class MessageReceiver {
 
-	public static void main(String[] args) {
-		new Receiver().run();
-	}
-
-	private void run() {
+	public void run() {
 		try{
 			//创建初始化上下文
 			Context ctx = getInitialContext();
@@ -79,15 +75,4 @@ public class Receiver {
 
 }
 
-class MessageHandler implements MessageListener{
 
-	@Override
-	public void onMessage(Message msg) {
-		try {
-			System.out.println("Get:"+ ((TextMessage) msg).getText());
-		} catch (JMSException e) {
-			e.printStackTrace();
-		}
-	}
-	
-}
