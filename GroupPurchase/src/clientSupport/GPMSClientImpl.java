@@ -1,4 +1,4 @@
-package client;
+package clientSupport;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -9,7 +9,7 @@ import assignment3.GroupPurchaseItem;
 import assignment3.GroupPurchaseManagementSystem;
 
 /**
- * 客户端使用的GroupPurchaseManagementSystem实现，内部通过RMI调用服务器端实际的实现
+ * 客户端使用的GroupPurchaseManagementSystem实现，内部通过RMI调用服务器端实际的功能实现
  * @author luMinO
  *
  */
@@ -21,8 +21,17 @@ public class GPMSClientImpl implements GroupPurchaseManagementSystem{
 	}
 
 	@Override
-	public boolean confirmPurchase(String arg0, String arg1) {
-		return false;
+	public boolean submitPurchase(String itemId, String bankAccount, String password,
+			String phone) {
+		boolean result = false;
+		
+		try {
+			result =  service.submitPurchase(itemId, bankAccount, password, phone);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 
 	@Override
@@ -41,14 +50,13 @@ public class GPMSClientImpl implements GroupPurchaseManagementSystem{
 	@Override
 	public boolean publishGroupPurchaseItem(String arg0, String arg1,
 			String arg2, double arg3, int arg4) {
-		// TODO Auto-generated method stub
+		//零售商的功能，不实现
 		return false;
 	}
 
 	@Override
-	public boolean submitPurchase(String arg0, String arg1, String arg2,
-			String arg3) {
-		// TODO Auto-generated method stub
+	public boolean confirmPurchase(String arg0, String arg1) {
+		//零售商的功能，不实现
 		return false;
 	}
 

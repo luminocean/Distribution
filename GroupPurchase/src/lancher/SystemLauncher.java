@@ -6,7 +6,9 @@ import java.rmi.registry.LocateRegistry;
 
 import rmi.RemoteGPMSImpl;
 import rmi.RemoteGPMSService;
-import server.SystemLinker;
+import serverSupport.SystemLinker;
+import util.Logger;
+import util.SideType;
 import assignment3.BankSystem;
 import assignment3.GroupPurchaseManagementSystem;
 import assignment3.GroupPurchaseManagementSystemFactory;
@@ -34,10 +36,12 @@ public class SystemLauncher {
 		
 		//创建管理系统，放点东西进去
 		gpm = GroupPurchaseManagementSystemFactory.createGroupPurchaseManagementSystem(messageSystem, bank);
-		gpm.publishGroupPurchaseItem("_seller_a_s3cret_k3y", "靴子", "捡来的", 20.55, 10);
+		gpm.publishGroupPurchaseItem("_seller_a_s3cret_k3y", "靴子", "捡来的", 200, 120);
 		
 		//设置RMI
 		setUpRMI(gpm);
+		
+		Logger.log(SideType.团购服务器, "团购服务器已启动", this);
 	}
 
 	
