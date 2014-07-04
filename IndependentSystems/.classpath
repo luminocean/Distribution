@@ -2,6 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/ShortMessageNotificationSystem.jar"/>
 	<classpathentry kind="lib" path="jms-lib/activation.jar"/>
 	<classpathentry kind="lib" path="jms-lib/antlr.jar"/>
 	<classpathentry kind="lib" path="jms-lib/avalon-framework.jar"/>
@@ -10,12 +12,19 @@
 	<classpathentry kind="lib" path="jms-lib/ejb3-persistence.jar"/>
 	<classpathentry kind="lib" path="jms-lib/FastInfoset.jar"/>
 	<classpathentry kind="lib" path="jms-lib/getopt.jar"/>
+	<classpathentry kind="lib" path="jms-lib/gmbal-api-only.jar"/>
+	<classpathentry kind="lib" path="jms-lib/ha-api.jar"/>
 	<classpathentry kind="lib" path="jms-lib/hibernate-annotations.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jacorb.jar"/>
 	<classpathentry kind="lib" path="jms-lib/javassist.jar"/>
+	<classpathentry kind="lib" path="jms-lib/javax.annotation-api.jar"/>
+	<classpathentry kind="lib" path="jms-lib/javax.xml.soap-api.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="jms-lib/jaxb-core.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="jms-lib/jaxb-jxc.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="jms-lib/jaxws-api.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jaxws-rt.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jaxws-tools.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jboss-aop-client.jar"/>
@@ -81,35 +90,26 @@
 	<classpathentry kind="lib" path="jms-lib/jmx-client.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jmx-invoker-adaptor-client.jar"/>
 	<classpathentry kind="lib" path="jms-lib/jnp-client.jar"/>
+	<classpathentry kind="lib" path="jms-lib/jsr181-api.jar"/>
 	<classpathentry kind="lib" path="jms-lib/log4j.jar"/>
 	<classpathentry kind="lib" path="jms-lib/logkit.jar"/>
 	<classpathentry kind="lib" path="jms-lib/mail.jar"/>
+	<classpathentry kind="lib" path="jms-lib/management-api.jar"/>
+	<classpathentry kind="lib" path="jms-lib/mimepull.jar"/>
 	<classpathentry kind="lib" path="jms-lib/policy.jar"/>
+	<classpathentry kind="lib" path="jms-lib/resolver.jar"/>
+	<classpathentry kind="lib" path="jms-lib/saaj-impl.jar"/>
 	<classpathentry kind="lib" path="jms-lib/scout.jar"/>
 	<classpathentry kind="lib" path="jms-lib/slf4j-api.jar"/>
 	<classpathentry kind="lib" path="jms-lib/slf4j-jboss-logging.jar"/>
 	<classpathentry kind="lib" path="jms-lib/stax-api.jar"/>
 	<classpathentry kind="lib" path="jms-lib/stax-ex.jar"/>
+	<classpathentry kind="lib" path="jms-lib/stax2-api.jar"/>
 	<classpathentry kind="lib" path="jms-lib/streambuffer.jar"/>
 	<classpathentry kind="lib" path="jms-lib/trove.jar"/>
+	<classpathentry kind="lib" path="jms-lib/woodstox-core-asl.jar"/>
 	<classpathentry kind="lib" path="jms-lib/wsdl4j.jar"/>
 	<classpathentry kind="lib" path="jms-lib/wstx.jar"/>
 	<classpathentry kind="lib" path="jms-lib/xmlsec.jar"/>
-	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/ShortMessageNotificationSystem.jar"/>
-	<classpathentry kind="lib" path="jms-lib/gmbal-api-only.jar"/>
-	<classpathentry kind="lib" path="jms-lib/ha-api.jar"/>
-	<classpathentry kind="lib" path="jms-lib/javax.annotation-api.jar"/>
-	<classpathentry kind="lib" path="jms-lib/javax.xml.soap-api.jar"/>
-	<classpathentry kind="lib" path="jms-lib/jaxb-core.jar"/>
-	<classpathentry kind="lib" path="jms-lib/jaxb-jxc.jar"/>
-	<classpathentry kind="lib" path="jms-lib/jaxws-api.jar"/>
-	<classpathentry kind="lib" path="jms-lib/jsr181-api.jar"/>
-	<classpathentry kind="lib" path="jms-lib/management-api.jar"/>
-	<classpathentry kind="lib" path="jms-lib/mimepull.jar"/>
-	<classpathentry kind="lib" path="jms-lib/resolver.jar"/>
-	<classpathentry kind="lib" path="jms-lib/saaj-impl.jar"/>
-	<classpathentry kind="lib" path="jms-lib/stax2-api.jar"/>
-	<classpathentry kind="lib" path="jms-lib/woodstox-core-asl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
