@@ -16,21 +16,15 @@ import javax.naming.NamingException;
 public class MessageSender {
 	private ConnectionFactory connectionFactory;
 	private Destination dest;
-	
-	public MessageSender() {
-		try {
-			Context ctx = getInitialContext();
 
-			connectionFactory = (ConnectionFactory) ctx
-					.lookup("ConnectionFactory");
-			dest = (Destination) ctx.lookup("shortmessage");
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public MessageSender() throws Exception {
+		Context ctx = getInitialContext();
+
+		connectionFactory = (ConnectionFactory) ctx.lookup("ConnectionFactory");
+		dest = (Destination) ctx.lookup("shortmessage");
 	}
-	
-	public boolean send(String target, String msg){
+
+	public boolean send(String target, String msg) {
 		try {
 			Connection connection = connectionFactory.createConnection();
 			Session session = connection.createSession(false,
@@ -42,22 +36,20 @@ public class MessageSender {
 
 			TextMessage message = session.createTextMessage();
 			message.setStringProperty("Contype", "txt");
-			message.setText(target+":"+msg);
+			message.setText(target + ":" + msg);
 
 			sender.send(message);
 			session.close();
 			connection.close();
-			
+
 			return true;
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return false;
 	}
-
-
 
 	private Context getInitialContext() {
 		Context ctx = null;

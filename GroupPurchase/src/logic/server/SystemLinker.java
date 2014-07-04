@@ -1,5 +1,7 @@
 package logic.server;
 
+import util.Logger;
+import util.SideType;
 import ws.bank.BankImplService;
 import ws.bank.BankPort;
 import assignment3.BankSystem;
@@ -12,15 +14,21 @@ import assignment3.ShortMessageSenderFactory;
  *
  */
 public class SystemLinker {
-	private ShortMessageSender sender = new MessageProxy();
+	private ShortMessageSender sender;
 	
 	/**
 	 * 获取消息系统的远程代理
 	 * @return
 	 */
 	public ShortMessageSender getMessageSystem(){
-		//直接new一个出来代替远程获取
-		//ShortMessageSender messageSender = ShortMessageSenderFactory.createShortMessageSender();
+		if( sender == null ){
+			try{
+				sender = new MessageProxy();
+			}catch(Exception e){
+				Logger.log(SideType.团购服务器, "连接消息服务器出错！将在本地建立消息服务！", this);
+				sender = ShortMessageSenderFactory.createShortMessageSender();
+			}
+		}
 		
 		return sender;
 	}
