@@ -4,9 +4,9 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
+import logic.server.SystemLinker;
 import rmi.RemoteGPMSImpl;
 import rmi.RemoteGPMSService;
-import serverSupport.SystemLinker;
 import util.Logger;
 import util.SideType;
 import assignment3.BankSystem;

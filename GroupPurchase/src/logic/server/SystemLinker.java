@@ -1,7 +1,7 @@
-package serverSupport;
+package logic.server;
 
-import bankService.BankImplService;
-import bankService.BankPort;
+import ws.bank.BankImplService;
+import ws.bank.BankPort;
 import assignment3.BankSystem;
 import assignment3.ShortMessageSender;
 import assignment3.ShortMessageSenderFactory;

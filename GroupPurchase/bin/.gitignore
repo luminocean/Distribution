@@ -8,3 +8,10 @@
 /serverSupport
 /bankService
 /remote
+/clientLogic
+/serverLogic
+/webService
+/bank
+/ws
+/businessLogic
+/logic

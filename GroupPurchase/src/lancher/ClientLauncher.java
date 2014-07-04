@@ -5,7 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import clientSupport.GPMSProxy;
+import logic.client.GPMSProxy;
 import assignment3.GroupPurchaseManagementSystem;
 import assignment3.GroupPurchaseWeb;
 import rmi.RemoteGPMSService;

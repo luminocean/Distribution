@@ -1,5 +1,5 @@
 
-package bankService;
+package ws.bank;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

@@ -1,5 +1,5 @@
 
-package bankService;
+package ws.bank;
 
 import java.util.List;
 import javax.jws.WebMethod;
@@ -36,8 +36,8 @@ public interface BankPort {
      */
     @WebMethod
     @WebResult(name = "result", targetNamespace = "")
-    @RequestWrapper(localName = "transfer", targetNamespace = "http://bank/", className = "bankService.Transfer")
-    @ResponseWrapper(localName = "transferResponse", targetNamespace = "http://bank/", className = "bankService.TransferResponse")
+    @RequestWrapper(localName = "transfer", targetNamespace = "http://bank/", className = "ws.bank.Transfer")
+    @ResponseWrapper(localName = "transferResponse", targetNamespace = "http://bank/", className = "ws.bank.TransferResponse")
     @Action(input = "http://bank/BankPort/transferRequest", output = "http://bank/BankPort/transferResponse")
     public boolean transfer(
         @WebParam(name = "account", targetNamespace = "")
@@ -54,12 +54,12 @@ public interface BankPort {
      * @param account
      * @param password
      * @return
-     *     returns java.util.List<bankService.Record>
+     *     returns java.util.List<ws.bank.Record>
      */
     @WebMethod
     @WebResult(name = "recordList", targetNamespace = "")
-    @RequestWrapper(localName = "listHistory", targetNamespace = "http://bank/", className = "bankService.ListHistory")
-    @ResponseWrapper(localName = "listHistoryResponse", targetNamespace = "http://bank/", className = "bankService.ListHistoryResponse")
+    @RequestWrapper(localName = "listHistory", targetNamespace = "http://bank/", className = "ws.bank.ListHistory")
+    @ResponseWrapper(localName = "listHistoryResponse", targetNamespace = "http://bank/", className = "ws.bank.ListHistoryResponse")
     @Action(input = "http://bank/BankPort/listHistoryRequest", output = "http://bank/BankPort/listHistoryResponse")
     public List<Record> listHistory(
         @WebParam(name = "account", targetNamespace = "")

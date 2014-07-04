@@ -1,8 +1,8 @@
-package serverSupport;
+package logic.server;
 
-import bankService.BankPort;
 import util.Logger;
 import util.SideType;
+import ws.bank.BankPort;
 import assignment3.BankSystem;
 
 public class BankProxy implements BankSystem{

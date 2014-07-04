@@ -1,4 +1,4 @@
-package clientSupport;
+package logic.client;
 
 import java.rmi.RemoteException;
 import java.util.List;

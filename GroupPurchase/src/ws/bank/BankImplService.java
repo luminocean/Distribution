@@ -1,5 +1,5 @@
 
-package bankService;
+package ws.bank;
 
 import java.net.MalformedURLException;
 import java.net.URL;

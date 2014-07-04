@@ -1,5 +1,5 @@
 
-package bankService;
+package ws.bank;
 
 import java.util.ArrayList;
 import java.util.List;
