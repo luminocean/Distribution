@@ -9,6 +9,7 @@ import logic.client.GPMSProxy;
 import assignment3.GroupPurchaseManagementSystem;
 import assignment3.GroupPurchaseWeb;
 import rmi.RemoteGPMSService;
+import util.ConfigManager;
 
 /**
  * 客户端启动器
@@ -26,7 +27,7 @@ public class ClientLauncher {
 		// 获取RMI接口，用这个RMI接口生成本地的GPMS实现
 		RemoteGPMSService remoteService;
 		try {
-			remoteService = (RemoteGPMSService) Naming.lookup("rmi://:1099/gpms");
+			remoteService = (RemoteGPMSService) Naming.lookup(ConfigManager.getValue("rmi"));
 			
 			GroupPurchaseManagementSystem gpms = new GPMSProxy(remoteService);
 

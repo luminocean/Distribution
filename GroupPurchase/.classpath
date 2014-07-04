@@ -114,5 +114,6 @@
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/wsdl4j.jar"/>
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/wstx.jar"/>
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/xmlsec.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

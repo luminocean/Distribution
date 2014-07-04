@@ -3,12 +3,15 @@ package ws.bank;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebEndpoint;
 import javax.xml.ws.WebServiceClient;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.WebServiceFeature;
+
+import util.ConfigManager;
 
 
 /**
@@ -17,7 +20,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "BankImplService", targetNamespace = "http://bank/", wsdlLocation = "http://localhost:8080/ws/bank?wsdl")
+@WebServiceClient(name = "BankImplService", targetNamespace = "http://bank/", wsdlLocation = "http://localhost:8082/ws/bank?wsdl")
 public class BankImplService
     extends Service
 {
@@ -30,7 +33,8 @@ public class BankImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:13001/ws/bank?wsdl");
+        	String urlStr = ConfigManager.getValue("bankwsdl");
+            url = new URL(urlStr);
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -1,4 +1,4 @@
-package message;
+package jms;
 import java.util.Properties;
 
 import javax.jms.Connection;

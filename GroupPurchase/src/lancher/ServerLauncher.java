@@ -9,6 +9,7 @@ import javax.xml.ws.Endpoint;
 import logic.server.SystemLinker;
 import rmi.RemoteGPMSImpl;
 import rmi.RemoteGPMSService;
+import util.ConfigManager;
 import util.Logger;
 import util.SideType;
 import ws.gpms.GPMSImpl;
@@ -48,7 +49,8 @@ public class ServerLauncher {
 		gpmsWS.setGPMS(gpm);
 		
 		//发布WSDL
-		Endpoint.publish("http://localhost:8081/ws/gpms", gpmsWS);
+		
+		Endpoint.publish(ConfigManager.getValue("gpmswsdl"), gpmsWS);
 		
 		Logger.log(SideType.团购服务器, "团购服务器已启动", this);
 	}
@@ -62,9 +64,16 @@ public class ServerLauncher {
 		try {
 			RemoteGPMSService service = new RemoteGPMSImpl(core);
 			
-			LocateRegistry.createRegistry(1099);
+			try{
+				String portStr = ConfigManager.getValue("rmiport");
+				int port = Integer.parseInt(portStr);
+				LocateRegistry.createRegistry(port);
+				Naming.rebind(ConfigManager.getValue("rmi"), service);
+			}catch(Exception e){
+				Logger.log(SideType.团购服务器, "获取并使用rmi端口失败！", this);
+				e.printStackTrace();
+			}
 			
-			Naming.rebind("rmi://:1099/gpms", service);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
