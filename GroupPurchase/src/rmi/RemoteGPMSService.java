@@ -6,7 +6,12 @@ import java.util.List;
 
 import assignment3.GroupPurchaseItem;
 
-public interface GroupPurchaseService extends Remote{
+/**
+ * 供客户端调用的远程接口
+ * @author luMinO
+ *
+ */
+public interface RemoteGPMSService extends Remote{
 	List<GPISerilized> listGroupPurchase() throws RemoteException;
 	boolean submitPurchase(String itemId, String bankAccount, String password, String phone) throws RemoteException;
 }

@@ -1,4 +1,4 @@
-package util;
+package server;
 
 import assignment3.BankSystem;
 import assignment3.ShortMessageSender;

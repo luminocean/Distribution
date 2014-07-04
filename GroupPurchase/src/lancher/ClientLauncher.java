@@ -3,9 +3,10 @@ package lancher;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 
+import client.GPMSClientImpl;
+import assignment3.GroupPurchaseManagementSystem;
 import assignment3.GroupPurchaseWeb;
-import rmi.GroupPurchaseService;
-import rmitest.Server;
+import rmi.RemoteGPMSService;
 
 /**
  * 客户端启动器
@@ -15,9 +16,13 @@ import rmitest.Server;
 public class ClientLauncher {
 
 	public static void main(String[] args) throws Exception {
-		GroupPurchaseService service = (GroupPurchaseService) Naming.lookup("rmi://:1099/sss");
+		RemoteGPMSService remoteService = (RemoteGPMSService) Naming.lookup("rmi://:1099/gpms");
 		
-		service.listGroupPurchase();
+		GroupPurchaseManagementSystem gpms = new GPMSClientImpl(remoteService);
+		
+		GroupPurchaseWeb client = new GroupPurchaseWeb();
+		
+		client.launch(gpms);
 	}
 
 }

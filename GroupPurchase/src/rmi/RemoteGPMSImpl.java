@@ -8,10 +8,15 @@ import java.util.List;
 import assignment3.GroupPurchaseItem;
 import assignment3.GroupPurchaseManagementSystem;
 
-public class GroupPurchaseImpl extends UnicastRemoteObject implements GroupPurchaseService{
+/**
+ * RMI远程接口的实现
+ * @author luMinO
+ *
+ */
+public class RemoteGPMSImpl extends UnicastRemoteObject implements RemoteGPMSService{
 	private GroupPurchaseManagementSystem core;
 	
-	public GroupPurchaseImpl(GroupPurchaseManagementSystem core) throws RemoteException{
+	public RemoteGPMSImpl(GroupPurchaseManagementSystem core) throws RemoteException{
 		this.core = core;
 	}
 
@@ -19,13 +24,8 @@ public class GroupPurchaseImpl extends UnicastRemoteObject implements GroupPurch
 	public List<GPISerilized> listGroupPurchase() throws RemoteException{
 		List<GroupPurchaseItem> items =  core.listGroupPurchase();
 		
-		List<GPISerilized> resultList = new LinkedList<GPISerilized>();
-		for( GroupPurchaseItem item: items ){
-			GPISerilized newItem = new GPISerilized(item);
-			resultList.add(newItem);
-		}
-		
-		return resultList;
+		List<GPISerilized> returnList = GPISerilized.serilizeInList(items);
+		return returnList;
 	}
 
 	@Override

@@ -4,14 +4,14 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
-import rmi.GroupPurchaseImpl;
-import rmi.GroupPurchaseService;
+import rmi.RemoteGPMSImpl;
+import rmi.RemoteGPMSService;
+import server.SystemLinker;
 import assignment3.BankSystem;
 import assignment3.GroupPurchaseManagementSystem;
 import assignment3.GroupPurchaseManagementSystemFactory;
 import assignment3.GroupPurchaseWeb;
 import assignment3.ShortMessageSender;
-import util.SystemLinker;
 
 /**
  * 服务器端启动器
@@ -32,36 +32,29 @@ public class SystemLauncher {
 		BankSystem bank = linker.getBankSystem();
 		ShortMessageSender messageSystem = linker.getMessageSystem();
 		
-		//创建管理系统
+		//创建管理系统，放点东西进去
 		gpm = GroupPurchaseManagementSystemFactory.createGroupPurchaseManagementSystem(messageSystem, bank);
-		
-		//向团购系统里面添加商品
 		gpm.publishGroupPurchaseItem("_seller_a_s3cret_k3y", "靴子", "捡来的", 20.55, 10);
 		
+		//设置RMI
 		setUpRMI(gpm);
-		
-	
-		//模拟用户端操作
-		//clientSimulation(gpm);
 	}
 
 	
-	
+	/**
+	 * 搭建RMI的服务，该服务调用本地的GPMS完成功能
+	 * @param core GPMS核心系统
+	 */
 	private void setUpRMI(GroupPurchaseManagementSystem core) {
 		try {
-			GroupPurchaseService service = new GroupPurchaseImpl(core);
+			RemoteGPMSService service = new RemoteGPMSImpl(core);
 			
 			LocateRegistry.createRegistry(1099);
 			
-			Naming.rebind("rmi://:1099/sss", service);
+			Naming.rebind("rmi://:1099/gpms", service);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	private void clientSimulation(GroupPurchaseManagementSystem gpm) {
-		GroupPurchaseWeb client = new GroupPurchaseWeb();
-		client.launch(gpm);
 	}
 
 }
