@@ -7,7 +7,7 @@ public class StartAllSystems {
 	public static void main(String[] args) {
 		new BankLauncher().launch();
 		
-		new MessageReceiver().run();
+		new MessageReceiver().launch();
 	}
 
 }

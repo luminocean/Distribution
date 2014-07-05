@@ -17,10 +17,13 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import util.Logger;
+import util.SideType;
+
 
 public class MessageReceiver {
 
-	public void run() {
+	public void launch() {
 		try{
 			//创建初始化上下文
 			Context ctx = getInitialContext();
@@ -42,16 +45,17 @@ public class MessageReceiver {
 			//异步接收消息
 			receiver.setMessageListener(new MessageHandler());
 			
-			//输出关闭提示，随时准备关闭
-			System.out.println("Press ENTER to shutdown...");
-			Scanner scanner = new Scanner(System.in);
-			scanner.nextLine();
+			Logger.log(SideType.消息服务器, "消息服务器已启动", this);
+			
+			for( int i=0; i<100; i++ ){
+				Thread.sleep(1000);
+			}
 			
 			session.close();
 			connection.close();
 			
 		}catch(Exception e){
-			e.printStackTrace();
+			Logger.log(SideType.消息服务器, "启动消息服务器失败, 放弃启动", e, this);
 		}
 	}
 	
@@ -67,7 +71,7 @@ public class MessageReceiver {
 			
 			ctx = new InitialContext(props);
 		} catch (NamingException e) {
-			e.printStackTrace();
+			Logger.log(SideType.消息服务器, "Naming异常", e, this);
 		}
 		
 		return ctx;

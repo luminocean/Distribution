@@ -6,4 +6,8 @@ public class Logger {
 	public static void log(SideType sourceSide, String msg, Object sourceObject){
 		System.out.println(sourceSide+" : "+msg+" ["+sourceObject.getClass()+"]");
 	}
+	
+	public static void log(SideType sourceSide, String msg, Exception e, Object sourceObject){
+		System.out.println(sourceSide+" : "+msg+" ["+sourceObject.getClass()+"]" + "   #"+e.getMessage());
+	}
 }

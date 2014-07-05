@@ -5,7 +5,7 @@ import message.MessageReceiver;
 public class MessageLauncher {
 
 	public static void main(String[] args) {
-		new MessageReceiver().run();
+		new MessageReceiver().launch();
 	}
 
 }
