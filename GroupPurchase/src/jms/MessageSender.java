@@ -36,7 +36,7 @@ public class MessageSender {
 
 			TextMessage message = session.createTextMessage();
 			message.setStringProperty("Contype", "txt");
-			message.setText(target + ":" + msg);
+			message.setText(target + "&" + msg);
 
 			sender.send(message);
 			session.close();
