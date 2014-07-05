@@ -28,8 +28,7 @@ public class BankImpl implements BankPort{
 
 	@Override
 	public List<Record> listHistory(String account, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return records;
 	}
 
 }

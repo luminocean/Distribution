@@ -1,5 +1,5 @@
 
-package retail;
+package retail.gpms;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -36,8 +36,8 @@ public interface GPMSPort {
      */
     @WebMethod
     @WebResult(name = "result", targetNamespace = "")
-    @RequestWrapper(localName = "publishGroupPurchaseItem", targetNamespace = "http://gpms.ws/", className = "retail.PublishGroupPurchaseItem")
-    @ResponseWrapper(localName = "publishGroupPurchaseItemResponse", targetNamespace = "http://gpms.ws/", className = "retail.PublishGroupPurchaseItemResponse")
+    @RequestWrapper(localName = "publishGroupPurchaseItem", targetNamespace = "http://gpms.ws/", className = "retail.gpms.PublishGroupPurchaseItem")
+    @ResponseWrapper(localName = "publishGroupPurchaseItemResponse", targetNamespace = "http://gpms.ws/", className = "retail.gpms.PublishGroupPurchaseItemResponse")
     @Action(input = "http://gpms.ws/GPMSPort/publishGroupPurchaseItemRequest", output = "http://gpms.ws/GPMSPort/publishGroupPurchaseItemResponse")
     public boolean publishGroupPurchaseItem(
         @WebParam(name = "SecretKey", targetNamespace = "")
@@ -60,8 +60,8 @@ public interface GPMSPort {
      */
     @WebMethod
     @WebResult(name = "result", targetNamespace = "")
-    @RequestWrapper(localName = "confirmPurchase", targetNamespace = "http://gpms.ws/", className = "retail.ConfirmPurchase")
-    @ResponseWrapper(localName = "confirmPurchaseResponse", targetNamespace = "http://gpms.ws/", className = "retail.ConfirmPurchaseResponse")
+    @RequestWrapper(localName = "confirmPurchase", targetNamespace = "http://gpms.ws/", className = "retail.gpms.ConfirmPurchase")
+    @ResponseWrapper(localName = "confirmPurchaseResponse", targetNamespace = "http://gpms.ws/", className = "retail.gpms.ConfirmPurchaseResponse")
     @Action(input = "http://gpms.ws/GPMSPort/confirmPurchaseRequest", output = "http://gpms.ws/GPMSPort/confirmPurchaseResponse")
     public boolean confirmPurchase(
         @WebParam(name = "SecretKey", targetNamespace = "")

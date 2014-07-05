@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <config>
+	<!-- 银行系统提供的WSDL地址 -->
 	<bankwsdl>
 		http://localhost:8082/ws/bank
 	</bankwsdl>
 	
+	<!-- 向外提供的团购管理系统WSDL地址 -->
 	<gpmswsdl>
 		http://localhost:8085/ws/gpms
 	</gpmswsdl>
 	
+	<!-- RMI所使用的监听地址与端口 -->
 	<rmi>rmi://:8809/gpms</rmi>
-	
 	<rmiport>8809</rmiport>
+	
+	<!-- jms配置 -->
+	<jnpuri>jnp://localhost:1099</jnpuri>
+	<queuename>shortmessage</queuename>
 </config>

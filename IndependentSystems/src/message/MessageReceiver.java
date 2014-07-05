@@ -17,6 +17,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import util.ConfigManager;
 import util.Logger;
 import util.SideType;
 
@@ -30,7 +31,7 @@ public class MessageReceiver {
 			//连接工厂
 			ConnectionFactory connectionFactory = (ConnectionFactory) ctx.lookup("ConnectionFactory");
 			//消息目的地
-			Destination dest = (Destination) ctx.lookup("shortmessage");
+			Destination dest = (Destination) ctx.lookup(ConfigManager.getValue("queuename"));
 			
 			//创建连接和会话
 			Connection connection = connectionFactory.createConnection();
@@ -39,8 +40,6 @@ public class MessageReceiver {
 			
 			//进入信息的接收
 			MessageConsumer receiver = session.createConsumer(dest);
-			
-			//TextMessage message = (TextMessage) receiver.receive();
 			
 			//异步接收消息
 			receiver.setMessageListener(new MessageHandler());
@@ -67,7 +66,7 @@ public class MessageReceiver {
 			Properties props = new Properties();
 			props.put(Context.INITIAL_CONTEXT_FACTORY,
 					"org.jnp.interfaces.NamingContextFactory");
-			props.put(Context.PROVIDER_URL, "jnp://localhost:1099");
+			props.put(Context.PROVIDER_URL, ConfigManager.getValue("jnpuri"));
 			
 			ctx = new InitialContext(props);
 		} catch (NamingException e) {

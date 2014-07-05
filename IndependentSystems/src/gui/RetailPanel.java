@@ -42,6 +42,7 @@ public class RetailPanel extends JPanel {
 		historyPanel.add(historyButton, BorderLayout.SOUTH);
 		
 		JTextArea area = new JTextArea();
+		area.setEditable(false);
 		historyPanel.add(area);
 		
 		HistoryListener listener = new HistoryListener();

@@ -1,5 +1,5 @@
 
-package retail;
+package retail.gpms;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

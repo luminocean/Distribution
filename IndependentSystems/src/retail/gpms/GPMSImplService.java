@@ -1,17 +1,14 @@
 
-package retail;
+package retail.gpms;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebEndpoint;
 import javax.xml.ws.WebServiceClient;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.WebServiceFeature;
-
-import util.ConfigManager;
 
 
 /**
@@ -20,7 +17,7 @@ import util.ConfigManager;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "GPMSImplService", targetNamespace = "http://gpms.ws/", wsdlLocation = "http://localhost:8081/ws/gpms?wsdl")
+@WebServiceClient(name = "GPMSImplService", targetNamespace = "http://gpms.ws/", wsdlLocation = "http://localhost:8085/ws/gpms?wsdl")
 public class GPMSImplService
     extends Service
 {
@@ -33,7 +30,7 @@ public class GPMSImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL(ConfigManager.getValue("gpmswsdl"));
+            url = new URL("http://localhost:8085/ws/gpms?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

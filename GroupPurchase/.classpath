@@ -2,11 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="lib/appframework-1.0.3.jar"/>
-	<classpathentry kind="lib" path="lib/GroupPurchaseManagementSystem.jar"/>
-	<classpathentry kind="lib" path="lib/GroupPurchaseWeb.jar"/>
-	<classpathentry kind="lib" path="lib/ShortMessageNotificationSystem.jar"/>
-	<classpathentry kind="lib" path="lib/swing-worker-1.1.jar"/>
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/activation.jar"/>
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/antlr.jar"/>
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/avalon-framework.jar"/>
@@ -114,6 +109,11 @@
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/wsdl4j.jar"/>
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/wstx.jar"/>
 	<classpathentry kind="lib" path="/IndependentSystems/jms-lib/xmlsec.jar"/>
-	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/IndependentSystems/lib/appframework-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/IndependentSystems/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/IndependentSystems/lib/GroupPurchaseManagementSystem.jar"/>
+	<classpathentry kind="lib" path="/IndependentSystems/lib/GroupPurchaseWeb.jar"/>
+	<classpathentry kind="lib" path="/IndependentSystems/lib/ShortMessageNotificationSystem.jar"/>
+	<classpathentry kind="lib" path="/IndependentSystems/lib/swing-worker-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -13,6 +13,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import util.ConfigManager;
+
 public class MessageSender {
 	private ConnectionFactory connectionFactory;
 	private Destination dest;
@@ -21,7 +23,7 @@ public class MessageSender {
 		Context ctx = getInitialContext();
 
 		connectionFactory = (ConnectionFactory) ctx.lookup("ConnectionFactory");
-		dest = (Destination) ctx.lookup("shortmessage");
+		dest = (Destination) ctx.lookup(ConfigManager.getValue("queuename"));
 	}
 
 	public boolean send(String target, String msg) {
@@ -58,7 +60,7 @@ public class MessageSender {
 			Properties props = new Properties();
 			props.put(Context.INITIAL_CONTEXT_FACTORY,
 					"org.jnp.interfaces.NamingContextFactory");
-			props.put(Context.PROVIDER_URL, "jnp://localhost:1099");
+			props.put(Context.PROVIDER_URL, ConfigManager.getValue("jnpuri"));
 
 			ctx = new InitialContext(props);
 		} catch (NamingException e) {

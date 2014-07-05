@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
-import retail.GPMSPort;
-import retail.RetailProxy;
+import retail.gpms.GPMSPort;
+import retail.gpms.RetailProxy;
 import util.Logger;
 import util.SideType;
 

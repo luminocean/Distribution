@@ -1,5 +1,5 @@
 
-package retail;
+package retail.gpms;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for publishGroupPurchaseItemResponse complex type.
+ * <p>Java class for confirmPurchaseResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="publishGroupPurchaseItemResponse">
+ * &lt;complexType name="confirmPurchaseResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "publishGroupPurchaseItemResponse", propOrder = {
+@XmlType(name = "confirmPurchaseResponse", propOrder = {
     "result"
 })
-public class PublishGroupPurchaseItemResponse {
+public class ConfirmPurchaseResponse {
 
     protected boolean result;
 
