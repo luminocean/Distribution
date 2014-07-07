@@ -54,7 +54,7 @@ public class MessageReceiver {
 			connection.close();
 			
 		}catch(Exception e){
-			Logger.log(SideType.消息服务器, "启动消息服务器失败, 放弃启动", e, this);
+			Logger.log(SideType.消息服务器, "启动消息服务器失败, 放弃启动（是否没有启动JBoss或者没有使用 -b 参数绑定正确的IP地址？）", e, this);
 		}
 	}
 	

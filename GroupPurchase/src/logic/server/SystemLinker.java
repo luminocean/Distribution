@@ -25,7 +25,7 @@ public class SystemLinker {
 			try{
 				sender = new MessageProxy();
 			}catch(Exception e){
-				Logger.log(SideType.团购服务器, "连接消息服务器出错！将在本地建立消息服务！", this);
+				Logger.log(SideType.团购服务器, "连接消息服务器出错！（是否没有启动JBoss或者没有使用 -b 参数绑定正确的IP地址？）将在本地建立消息服务！", this);
 				sender = ShortMessageSenderFactory.createShortMessageSender();
 			}
 		}
