@@ -4,13 +4,13 @@
 <config>
 	<replaces>
 		<pair>
-			<!-- 本地GroupPurchase地址 -->
+			<!-- 远程GroupPurchase地址 -->
 			<key>GP_REMOTE</key>
 			<value>localhost</value>
 		</pair>
 
 		<pair>
-			<!-- 远程Independent Systems地址 -->
+			<!-- 本地Independent Systems地址 -->
 			<key>ISYS_LOCAL</key>
 			<value>localhost</value>
 		</pair>

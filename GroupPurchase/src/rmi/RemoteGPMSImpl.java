@@ -9,7 +9,10 @@ import assignment3.GroupPurchaseItem;
 import assignment3.GroupPurchaseManagementSystem;
 
 /**
- * RMI远程接口的实现
+ * RMI远程接口的实现，实际上就是把远程RMI的调用转给本地已经存在的GPMS来完成任务
+ * 但是比较麻烦的是，个别方法（listGroupPurchase）所使用到的类（GroupPurchaseIte）由于要通过RMI传输，因此必须要实现Serializable接口
+ * 可类库中实现的类（GroupPurchaseItem）并没有实现这个接口！
+ * 因此只能使用GPISerilized类复制其所有字段值再进行传输 - -#
  * @author luMinO
  *
  */

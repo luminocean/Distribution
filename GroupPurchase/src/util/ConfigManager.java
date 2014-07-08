@@ -13,6 +13,12 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
+
+/**
+ * 配置管理器，专门读取配置文件，提供给系统的各个部分访问可配置的信息
+ * @author luMinO
+ *
+ */
 public class ConfigManager {
 	private static String CONFIGPATH = "config/config.xml";
 	
@@ -47,6 +53,11 @@ public class ConfigManager {
 		}
 	}
 
+	/**
+	 * 所有的配置信息均通过键值对来访问，所以其他逻辑在使用key访问配置的值的时候其实是硬编码的
+	 * @param key
+	 * @return
+	 */
 	public static String getValue(String key){
 		Element root = doc.getRootElement();
 		Element e = root.element(key);
@@ -103,7 +114,7 @@ public class ConfigManager {
 }
 
 /**
- * 由替换表所使用
+ * 由替换表所使用的内部类，其实就是键值对
  * @author luMinO
  *
  */

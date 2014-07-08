@@ -5,6 +5,11 @@ import util.SideType;
 import ws.bank.BankPort;
 import assignment3.BankSystem;
 
+/**
+ * 银行服务的代理于远程银行系统交互，接了BankSystem接口，给本地的GPMS提供服务
+ * @author luMinO
+ *
+ */
 public class BankProxy implements BankSystem{
 	private BankPort bankPort;
 

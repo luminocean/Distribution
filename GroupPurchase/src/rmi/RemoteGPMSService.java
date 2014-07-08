@@ -7,7 +7,7 @@ import java.util.List;
 import assignment3.GroupPurchaseItem;
 
 /**
- * 供客户端调用的远程接口
+ * 供客户端调用的远程接口, 里面的方法实际上就是已经写好的GPMS类的方法接口，这里只不过是复制了一下来实现RMI而已
  * @author luMinO
  *
  */

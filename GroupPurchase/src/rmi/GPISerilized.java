@@ -8,6 +8,7 @@ import assignment3.GroupPurchaseItem;
 
 /**
  * GroupPurchaseItem 的可序列化版本，用于解决GroupPurchaseItem不可序列化的问题
+ * 所做的事情就是把GroupPurchaseItem里面的所有字段值复刻一遍
  * @author luMinO
  *
  */
