@@ -46,6 +46,7 @@ public class SystemLinker {
 			try{
 				BankPort bankPort = new BankImplService().getBankImplPort();
 				BankSystem bank = new BankProxy(bankPort);
+				return bank;
 			}catch(Exception e){
 				Logger.log(SideType.团购服务器, "无法与银行服务器建立WSDL连接！请检查银行服务是否开启", e, this);
 				//没有什么替代方案，只能停止系统了

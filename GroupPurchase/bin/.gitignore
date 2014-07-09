@@ -1,6 +1,3 @@
-/jms
-/ws
-/util
-/logic
-/lancher
 /rmi
+/lancher
+/logic

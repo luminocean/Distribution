@@ -33,7 +33,7 @@ public class ClientLauncher {
 
 			GroupPurchaseWeb client = new GroupPurchaseWeb();
 
-			// launch方法只接受一个gpms接口，所以没办法只能这么写
+			// launch方法只接受一个gpms接口，所以上面搞那么复杂没办法，只能这么写
 			client.launch(gpms);
 			
 		} catch (Exception e) {
