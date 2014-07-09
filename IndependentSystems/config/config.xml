@@ -6,26 +6,26 @@
 		<pair>
 			<!-- 远程GroupPurchase地址 -->
 			<key>GP_REMOTE</key>
-			<value>localhost</value>
+			<value>127.0.0.1</value>
 		</pair>
 
 		<pair>
 			<!-- 本地Independent Systems地址 -->
 			<key>ISYS_LOCAL</key>
-			<value>localhost</value>
+			<value>127.0.0.1</value>
 		</pair>
 
 		<pair>
 			<!-- JMS服务器地址 -->
 			<key>JMS</key>
-			<value>localhost</value>
+			<value>127.0.0.1</value>
 		</pair>
 	</replaces>
 
 
 	<!-- 开始调试模式 -->
 	<debug>
-		true
+		false
 	</debug>
 	
 	<!-- 银行系统提供的WSDL地址 -->
@@ -43,6 +43,6 @@
 	<rmiport>8809</rmiport>
 
 	<!-- jms配置 -->
-	<jnpuri>jnp://localhost:1099</jnpuri>
+	<jnpuri>jnp://JMS:1099</jnpuri>
 	<queuename>shortmessage</queuename>
 </config>

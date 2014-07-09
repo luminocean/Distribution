@@ -6,26 +6,26 @@
 		<pair>
 			<!-- 本地GroupPurchase地址 -->
 			<key>GP_LOCAL</key>
-			<value>localhost</value>
+			<value>127.0.0.1</value>
 		</pair>
 		
 		<pair>
 			<!-- 远程Independent Systems地址 -->
 			<key>ISYS_REMOTE</key>
-			<value>localhost</value>
+			<value>127.0.0.1</value>
 		</pair>
 		
 		<pair>
 			<!-- JMS服务器地址 -->
 			<key>JMS</key>
-			<value>localhost</value>
+			<value>127.0.0.1</value>
 		</pair>
 	</replaces>
 
 
 	<!-- 开始调试模式 -->
 	<debug>
-		true
+		false
 	</debug>
 	
 
