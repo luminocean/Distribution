@@ -12,15 +12,16 @@ public class GPMSImpl implements GPMSPort{
 
 	@Override
 	public boolean confirmPurchase(String sellerSecretKey, String confirm) {
-		Logger.log(SideType.团购服务器, "模拟确认购买！", this);
+		Logger.log(SideType.团购服务器, "收到购买确认请求，验证确认码", this);
+		boolean result = gpm.confirmPurchase(sellerSecretKey, confirm);
 		
-		return true;
+		return result;
 	}
 
 	@Override
 	public boolean publishGroupPurchaseItem(String sellerSecretKey,
 			String productName, String introduction, double price, int limit) {
-		Logger.log(SideType.团购服务器, "模拟发布新团购！", this);
+		Logger.log(SideType.团购服务器, "收到发布新团购请求", this);
 		
 		if( gpm != null ){
 			boolean result = gpm.publishGroupPurchaseItem(sellerSecretKey, productName, introduction, price, limit);
