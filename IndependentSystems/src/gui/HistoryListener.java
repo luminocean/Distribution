@@ -26,7 +26,7 @@ public class HistoryListener implements ActionListener{
 		}
 		
 		BankPort bank = BankProxy.getPort();
-		List<Record> records = bank.listHistory("银行", "不检查~");
+		List<Record> records = bank.listHistory("seller", "不检查~");
 		
 		//开始填充输出
 		StringBuilder builder = new StringBuilder();

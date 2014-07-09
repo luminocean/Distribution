@@ -28,7 +28,13 @@ public class BankImpl implements BankPort{
 
 	@Override
 	public List<Record> listHistory(String account, String password) {
-		return records;
+		List<Record> targetRecords = new LinkedList<Record>();
+		
+		for( Record r: records ){
+			if( r.getTarget().equals(account) ){
+				targetRecords.add(r);
+			}
+		}
+		return targetRecords;
 	}
-
 }
