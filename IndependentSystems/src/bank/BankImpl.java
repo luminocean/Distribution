@@ -19,7 +19,7 @@ public class BankImpl implements BankPort{
 	@Override
 	public boolean transfer(String account, String password, String target,
 			double amount) {
-		Logger.log(SideType.银行服务器, "模拟转账！To "+target+": $"+amount, this);
+		Logger.log(SideType.银行服务器, "进行转账！To "+target+": $"+amount, this);
 		
 		records.add(new Record(account, target, amount));
 		

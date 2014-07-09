@@ -34,7 +34,6 @@ public class RemoteGPMSImpl extends UnicastRemoteObject implements RemoteGPMSSer
 	@Override
 	public boolean submitPurchase(String itemId, String bankAccount,
 			String password, String phone) throws RemoteException{
-		System.out.println(itemId+" "+bankAccount+" "+password+" "+phone);
 		boolean result = core.submitPurchase(itemId, bankAccount, password, phone);
 		
 		return result;
