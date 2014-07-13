@@ -6,19 +6,19 @@
 		<pair>
 			<!-- 远程GroupPurchase地址 -->
 			<key>GP_REMOTE</key>
-			<value>172.17.147.197</value>
+			<value>127.0.0.1</value>
 		</pair>
 
 		<pair>
 			<!-- 本地Independent Systems地址 -->
 			<key>ISYS_LOCAL</key>
-			<value>172.17.159.207</value>
+			<value>127.0.0.1</value>
 		</pair>
 
 		<pair>
 			<!-- JMS服务器地址 -->
 			<key>JMS</key>
-			<value>172.17.159.207</value>
+			<value>127.0.0.1</value>
 		</pair>
 	</replaces>
 
